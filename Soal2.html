@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsi-Grafika</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="logo/logo_mini.svg">
+    <script src="js/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="display">
+        <canvas id="multiLine-chart"></canvas>
+        <script>
+            // Multi area chart
+            new Chart(document.getElementById("multiLine-chart"), {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [{
+                        label: 'Instagram',
+                        data: [8, 11, 43, 15, 12, 54, 16, 15, 13, 19, 11, 14],
+                        borderColor: ['rgba(255, 99, 132, 0.5)'],
+                        backgroundColor: ['rgba(255, 99, 132, 0.5)'],
+                        borderWidth: 2,
+                        fill: true
+                    }, {
+                        label: 'Telegram',
+                        data: [7, 17, 12, 16, 14, 45, 16, 12, 15, 11, 13, 9],
+                        borderColor: ['rgba(54, 162, 235, 0.5)'],
+                        backgroundColor: ['rgba(54, 162, 235, 0.5)'],
+                        borderWidth: 2,
+                        fill: true
+                    }, {
+                        label: 'email',
+                        data: [6, 14, 16, 20, 12, 18, 15, 12, 17, 19, 15, 11],
+                        borderColor: ['rgba(255, 206, 86, 0.5)'],
+                        backgroundColor: ['rgba(255, 206, 86, 0.5)'],
+                        borderWidth: 2,
+                        fill: true
+                    }],
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Tingkat Penggunaan Sosmed'
+                    },
+                    plugins: {
+                        filler: {
+                            propagate: true
+                        }
+                    },
+                    elements: {
+                        point: {
+                            radius: 2
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: true
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

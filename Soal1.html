@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Responsi-Grafika</title>
+    <script src="js/Chart.min.js"></script>
+    <link rel="shortcut icon" href="logo/logo_mini.svg">
+</head>
+
+<body>
+    <div class="display">
+        <canvas id="mixed-chart"></canvas>
+        <script>
+            //Baer Chart
+            var gkChart = document.getElementById("mixed-chart").getContext('2d');
+            var barTotalPopulationData = [22006299, 15835918, 14919501, 14797756, 14433147];
+            var lineExample1 = [47563, 675968, 1454210, 240124, 4546556];
+            var lineExample2 = [356588, 23244, 5687, 4565420, 5659888];
+            var labelPopulation = ["Tokyo", "Mumbai", "Mexico City", "Shanghai", "Sao Paulo"];
+            var myChart = new Chart(gkChart, {
+                type: 'bar',
+                data: {
+                    labels: labelPopulation,
+                    datasets: [{
+                        label: 'Population',
+                        data: barTotalPopulationData,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)'
+                        ],
+                        borderWidth: 1
+                    }, {
+                        label: 'ExampleLine1',
+                        data: lineExample1,
+                        backgroundColor: '#ff0000',
+                        borderColor: '#ff0000',
+                        borderWidth: 1,
+                        type: 'line',
+                        fill: false
+                    }, {
+                        label: 'ExampleLine2',
+                        data: lineExample2,
+                        backgroundColor: '#0000ff',
+                        borderColor: '#0000ff',
+                        borderWidth: 1,
+                        type: 'line',
+                        fill: false
+                    }]
+                },
+            });
+        </script>
+    </div>
+</body>
+
+</html>

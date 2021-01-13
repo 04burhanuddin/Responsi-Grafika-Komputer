@@ -1,0 +1,6 @@
+.display {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000000;
+}
